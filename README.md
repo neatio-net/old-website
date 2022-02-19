@@ -1,4 +1,4 @@
-# neatio.org Website
+# Neatio Web Site
 
 Written in TypeScript
 
@@ -6,20 +6,26 @@ Built with Vue.js
 
 Note: use node v14.17.x when building from source
 
+Clone repo
+
+```
+https://github.com/neatlab/neatio.org.git
+```
+
 Dependencies installation
 
-```bash
+```
 npm i --save
 ```
 
 For development
 
-```bash
+```
 npm run dev
 ```
 
 For production
 
-```bash
+```
 npm run dist
 ```
