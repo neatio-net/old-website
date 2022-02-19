@@ -4,7 +4,7 @@ Written in TypeScript
 
 Built with Vue.js
 
-Please use node v14.17.x when building from source
+Note: use node v14.17.x when building from source
 
 Dependencies installation
 
