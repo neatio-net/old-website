@@ -27,10 +27,10 @@
             {{ $t("FEATURES") }}
             </router-link>
           </div>
-                    <div class="nav__item" @click="onClickNav()">
-            <router-link to="/whitepaper.pdf">
+          <div class="nav__item" @click="onClickNav()">
+            <a href="https://neatio.org/whitepaper.pdf" target="_blank">
             {{ $t("WHITEPAPER") }}
-            </router-link>
+            </a>
           </div>
           <div class="nav__item" @click="onClickNav()">
             <a href="https://scan.neatio.org" target="_blank">{{
