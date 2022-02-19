@@ -22,19 +22,25 @@
               $t("ABOUT")
             }}</router-link>
           </div>
+                    <div class="nav__item" @click="onClickNav()">
+            <router-link to="/features">
+            {{ $t("FEATURES") }}
+            </router-link>
+          </div>
+                    <div class="nav__item" @click="onClickNav()">
+            <router-link to="/whitepaper.pdf">
+            {{ $t("WHITEPAPER") }}
+            </router-link>
+          </div>
           <div class="nav__item" @click="onClickNav()">
             <a href="https://scan.neatio.org" target="_blank">{{
               $t("EXPLORER")
             }}</a>
           </div>
-          <div class="nav__item" @click="onClickNav()">
-            <router-link to="/features">
-            {{ $t("FEATURES") }}
-            </router-link>
-          </div>
+
           <div class="nav__item" @click="onClickNav()">
             <a href="https://wallet.neatio.org" target="_blank">{{
-              $t("WALLET")
+              $t("WEBWALLET")
             }}</a>
           </div>
         </div>
@@ -54,42 +60,53 @@
       <div class="footer__main">
         <div class="footer__col footer__col--left">
           <div class="footer__logo">  
-            <div class="footer__menu_caption">{{ $t("GET IN TOUCH | GET INVOLVED") }}</div>
+            <div class="footer__menu_caption">{{ $t("GET IN TOUCH  ||  GET INVOLVED") }}</div>
           </div>        
           <div class="footer__title"></div>
           <div class="footer__social-media">
             <ul>
               <li class="">
                 <a
-                  href="https://discord.gg/MF3YJdxyFb"
+                  href="https://dd.neatio.org"
                   target="_blank"
                   rel="noopener"
                   ><img
-                    src="./assets/images/social-media/Discord_white.png"
+                    src="./assets/images/social-media/dd-icon.png"
                     alt=""
-                    width="24"
+                    width="28"
                 /></a>
-              </li>             
+              </li>  
+                            <li class="">
+                <a
+                  href="https://t.me/Neat_io"
+                  target="_blank"
+                  rel="noopener"
+                  ><img
+                    src="./assets/images/social-media/tg-icon.png"
+                    alt=""
+                    width="28"
+                /></a>
+              </li>           
               <li class="">
                 <a
                   href="https://twitter.com/neat_io"
                   target="_blank"
                   rel="noopener"
                   ><img
-                    src="./assets/images/social-media/Twitter_white.png"
+                    src="./assets/images/social-media/tw-icon.png"
                     alt=""
-                    width="24"
+                    width="28"
                 /></a>
               </li>
               <li class="">
                 <a
-                  href="mailto:contact@neatio.org"
+                  href="https://www.facebook.com/xNeatio"
                   target="_blank"
                   rel="noopener"
                   ><img
-                    src="./assets/images/social-media/Email_white.png"
+                    src="./assets/images/social-media/fb-icon.png"
                     alt=""
-                    width="24"
+                    width="28"
                 /></a>
               </li>
               <li class="">
@@ -98,9 +115,9 @@
                   target="_blank"
                   rel="noopener"
                   ><img
-                    src="./assets/images/social-media/Reddit_white.png"
+                    src="./assets/images/social-media/rd-icon.png"
                     alt=""
-                    width="24"
+                    width="28"
                 /></a>
               </li>
               <li class="">
@@ -109,9 +126,9 @@
                   target="_blank"
                   rel="noopener"
                   ><img
-                    src="./assets/images/social-media/Bitcointalk_white.png"
+                    src="./assets/images/social-media/bt-icon.png"
                     alt=""
-                    width="24"
+                    width="28"
                 /></a>
               </li> 
               <li class="">
@@ -120,23 +137,19 @@
                   target="_blank"
                   rel="noopener"
                   ><img
-                    src="./assets/images/social-media/Github_white.png"
+                    src="./assets/images/social-media/gh-icon.png"
                     alt=""
-                    width="24"
+                    width="28"
                 /></a>
               </li>
             </ul>
           </div>
         </div>
         </div>
-      <div class="footer__bottom">        
+      <div class="footer__bottom">
         <div class="footer__bottom-info">
-          <div>
-             <router-link to="/terms">{{$t("Terms")}}</router-link>
-          </div>
-          <div class="footer__copyright">
-            &copy; {{ year }} Neatio
-          </div>
+
+          <div class="footer__copyright"><router-link to="/terms">{{ $t("Terms") }}</router-link> &copy; {{ year }} Neatio</div>
         </div>
       </div>
     </footer>
@@ -145,16 +158,13 @@
 
 <script lang="ts">
 import i18n from "@/plugins/i18n";
-
 export default {
   name: "app",
   data() {
     return {
       navActive: false as boolean,
       year: new Date().getFullYear(),
-      languages: [
-        { flag: "en", language: "en", title: "En" },
-      ]
+      languages: [{ flag: "en", language: "en", title: "En" }],
     };
   },
   methods: {
@@ -166,23 +176,22 @@ export default {
     },
     onClickNav(): void {
       this.navActive = false;
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 ::-webkit-scrollbar {
-    display: none;
-  };
+  display: none;
+}
 
 .page-container {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $contentPrimary;
+  //color: $contentPrimary;
   width: 100vw;
-  height: 100vh;
-  margin: 0;
+  height: 100%;
 }
 
 .header {
@@ -211,7 +220,7 @@ export default {
     justify-content: space-between;
 
     @include mq-lrg {
-      display: block;
+      display: inline-block;
 
       .navActive & {
         padding-left: 0;
@@ -251,9 +260,6 @@ export default {
 .view-container {
   .navActive & {
     display: none;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
   }
 }
 
@@ -275,39 +281,37 @@ export default {
   }
 
   &__item {
+    a {
+      color: #00BFFF;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-family: "Computer";
+      text-decoration: none;
 
-a {
-  color: #A6FF33;
-  font-size: 20px;
-  text-transform: uppercase;
-  font-family: "Computer";
-  text-decoration: none;
-  
-  display: inline-block;
-  padding: 3px;
-  position: relative;
-}
-a:after {    
-  background: none repeat scroll 0 0 transparent;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 2px;
-  left: 50%;
-  position: relative;
-  background: #A6FF33;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
-a:hover:after { 
-  width: 100%; 
-  left: 0; 
-}
-
+      display: inline-block;
+      padding: 3px;
+      position: relative;
+    }
+    a:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: relative;
+      background: #00BFFF;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+    a:hover:after {
+      width: 100%;
+      left: 0;
+    }
 
     a {
       @include font-size(1.4);
-      color:#00BFFF;            
+      color: #00BFFF;
       text-decoration: none;
       margin: 0 16px;
 
@@ -330,35 +334,36 @@ a:hover:after {
   }
 }
 
-.lang-select {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  @include mq-lrg {
-    padding: 10px;
-  }
+// .lang-select {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
 
-  &__btn {
-    cursor: pointer;
-    color: $contentLight;
-    border: 1px solid $divider;
-    font-size: 10px;
-    margin: 2px;
-    display: inline-flex;
-    height: 20px;
-    width: 20px;
-    justify-content: center;
-    align-items: center;
+//   @include mq-lrg {
+//     padding: 10px;
+//   }
 
-    @include mq-lrg {
-      @include font-size(1.3);
-      margin: 4px;
-      height: 30px;
-      width: 30px;
-    }
-  }
-}
+//   &__btn {
+//     cursor: pointer;
+//     color: $contentLight;
+//     border: 1px solid $divider;
+//     font-size: 10px;
+//     margin: 2px;
+//     display: inline-flex;
+//     height: 20px;
+//     width: 20px;
+//     justify-content: center;
+//     align-items: center;
+
+//     @include mq-lrg {
+//       @include font-size(1.3);
+//       margin: 4px;
+//       height: 30px;
+//       width: 30px;
+//     }
+//   }
+// }
 
 .nav-toggle {
   width: 40px;

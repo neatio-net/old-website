@@ -17,7 +17,7 @@ const messages = {
       // HOME
       home: {
         welcomeMsg: `THIS IS NEAT`,
-        welcomeNote: `Blazing Fast, Ultra Secure and ECO Friendly Payment Solution Powered By Blockchain Technology`,
+        welcomeNote: `Blazing Fast, Highly Scalable and Eco-Friendly Blockchain Powered By State-Of-The-Art Technology`,
         },
       // ABOUT & FEATURES
       about: {

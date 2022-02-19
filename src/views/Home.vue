@@ -3,7 +3,7 @@
     <div class="hero">
       <div class="hero__content content-container">
         <div class="hero__header">
-         <div class="hero"><img src="../assets/images/neat_empty.png" alt="" width="116" /></div>
+         <div class="hero"><img src="../assets/images/logo.png" alt="" width="116" /></div>
           <h1 class="hero__title">{{ $t("pages.home.welcomeMsg") }}</h1>
           <div class="hero__subTitle">{{ $t("pages.home.welcomeNote") }}</div>
             <div class="btn"><router-link to="/features">

@@ -5,6 +5,6 @@ module.exports = {
         prependData: `@import "@/styles/_main.scss";`
       }
     }
-  }
+  },
 
 };
